@@ -5,16 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './context/ThemeContext';
 import Background from './components/Background';
-import Toggle from './components/ThemeToggle';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
       <Background>
-        <div className="absolute right-0 top-0 mr-4 mt-6">
-          <Toggle />
-        </div>
+        
         <App />
       </Background>
     </ThemeProvider>

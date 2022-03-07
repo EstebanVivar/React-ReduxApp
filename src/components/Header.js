@@ -1,17 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+
+import Toggle from './ThemeToggle';
 
 const Header = () => {
     return (
-        <div className="grid grid-cols-2 place-items-center p-4 bg-white dark:bg-slate-900 rounded-lg shadow-xl">
-
-            <div className="text-lg md:text-4xl m-4 text-slate-900 dark:text-white  font-medium ">Product Manager Redux</div>
-            <a classname="button " href="/products/new">
-                <button className='w-28 md:w-32 md:h-14 lg:w-48 transition-colors duration-300 dark:bg-indigo-500 dark:text-indigo-100 text-gray-900 bg-blue-500 rounded-lg dark:hover:bg-indigo-700 hover:bg-blue-700'>
-                    Agregar Producto
-                </button>
-            </a>
-        </div>
-
+        <nav className="bg-slate-200 dark:bg-slate-800/50 fixed inset-x-0 shadow-xl">
+            <div className="max-w-6xl mx-auto px-4">
+                <div className="flex justify-between">
+                    <div className="flex space-x-4">
+                        <div className="text-3xl my-auto text-slate-900 dark:text-white  font-medium "><Link to={'/'}>Product Redux</Link></div>
+                    </div>
+                    <div className="flex items-center m-3 space-x-2">
+                        <Toggle />
+                        <Link to="/products/new" className="py-3 px-2 w-32  font-extrabold text-lg text-center bg-yellow-500 text-white hover:bg-yellow-200  hover:text-yellow-900 rounded transition duration-300">
+                            Add product
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </nav>
     );
 }
 

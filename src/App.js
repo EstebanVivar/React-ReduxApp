@@ -7,13 +7,18 @@ import Products from './components/Products';
 
 
 
+//Redux
+import {Provider} from 'react-redux';
+
+import store from './store';
 
 
 function App() {
   return (
     <Router>
+      <Provider store={store}>
       <Header />
-      <div className='App'>
+      <div className='h-screen py-32'>
           <Routes>
             <Route exact path="/" element={<Products />} />
 
@@ -22,7 +27,7 @@ function App() {
             <Route exact path="/products/edit/:id" element={<EditProduct />} />
           </Routes>
       </div>
-
+      </Provider>
     </Router>
   );
 }
